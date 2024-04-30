@@ -4,8 +4,8 @@
 from pymongo import MongoClient
 
 
-def print_nginx_logs(nginx_collection):
-    '''Prints stats about Nginx request logs.
+def print_nginx_request_logs(nginx_collection):
+    '''Prints stats about Nginx request logs
     '''
     print('{} logs'.format(nginx_collection.count_documents({})))
     print('Methods:')
@@ -23,7 +23,7 @@ def run():
     '''Provides some stats
     '''
     client = MongoClient('mongodb://127.0.0.1:27017')
-    print_nginx_logs(client.logs.nginx)
+    print_nginx_request_logs(client.logs.nginx)
 
 
 if __name__ == '__main__':
